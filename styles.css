@@ -9,6 +9,8 @@
   --surface: #ffffff;
   --border: #d9e7e4;
   --slider-duration: 45s;
+  --accent-green-start: #0d694f;
+  --accent-green-end: #16a06c;
 }
 
 * {
@@ -150,7 +152,7 @@ h1 {
 
 .btn-secondary {
   margin-top: 1rem;
-  background: linear-gradient(130deg, #0d694f, #16a06c);
+  background: linear-gradient(130deg, var(--accent-green-start), var(--accent-green-end));
 }
 
 .slider-strip {
