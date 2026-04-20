@@ -206,6 +206,7 @@
             <p><strong>Address:</strong> 11-143, Salipeta, Sri Kalahasti - 517644</p>
             <label for="sareeIdInput">Enter Saree ID</label>
             <input id="sareeIdInput" type="text" placeholder="Example: KP-101" aria-label="Enter Saree ID" />
+            <small id="sareeIdHint" class="input-hint">Use format like KP-101.</small>
             <a
               id="whatsappChatLink"
               class="btn"
@@ -237,6 +238,7 @@
       const phoneNumber = "919700934131";
       const sliderTrack = document.querySelector(".slider-track");
       const sareeIdInput = document.getElementById("sareeIdInput");
+      const sareeIdHint = document.getElementById("sareeIdHint");
       const whatsappChatLink = document.getElementById("whatsappChatLink");
       const whatsappItems = document.querySelectorAll(".whatsapp-item");
       const slideItems = document.querySelectorAll(".slide");
@@ -272,8 +274,14 @@
       });
 
       const updateContactWhatsApp = () => {
-        const sareeId = sanitizeSareeId(sareeIdInput.value);
+        const rawSareeId = sareeIdInput.value.trim();
+        const sareeId = sanitizeSareeId(rawSareeId);
         whatsappChatLink.href = buildWhatsAppLink(sareeId);
+        if (sareeIdHint) {
+          const isInvalid = rawSareeId.length > 0 && !sareeId;
+          sareeIdHint.textContent = isInvalid ? "Invalid format. Use pattern like KP-101." : "Use format like KP-101.";
+          sareeIdHint.classList.toggle("error", isInvalid);
+        }
       };
 
       if (sareeIdInput && whatsappChatLink) {
