@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <defs>
+    <linearGradient id="pen-kalamkari-sarees-gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8f4f11"/>
+      <stop offset="100%" stop-color="#d38b3c"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#pen-kalamkari-sarees-gradient)"/>
+  <circle cx="150" cy="120" r="100" fill="#ffffff16"/>
+  <circle cx="1050" cy="560" r="180" fill="#ffffff1e"/>
+  <text x="600" y="320" text-anchor="middle" font-family="Georgia, serif" font-size="72" fill="#fff" letter-spacing="3">MS PEN KALAMKARI</text>
+  <text x="600" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="54" fill="#fff">Pen Kalamkari Sarees</text>
+</svg>
