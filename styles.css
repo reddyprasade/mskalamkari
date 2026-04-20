@@ -205,6 +205,12 @@ h1 {
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .slider-track {
+    animation: none;
+  }
+}
+
 .trend-panel {
   background: var(--surface);
   border: 1px solid var(--border);
