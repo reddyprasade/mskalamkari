@@ -239,7 +239,9 @@
       }
 
       const buildWhatsAppLink = (sareeId) => {
-        const message = `Hello MS Pen Kalamkari, please share details and more images for Saree ID: ${sareeId}`;
+        const message = sareeId
+          ? `Hello MS Pen Kalamkari, please share details and more images for Saree ID: ${sareeId}`
+          : "Hello MS Pen Kalamkari, please share latest collections and show all images.";
         return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
       };
 
@@ -251,12 +253,14 @@
       });
 
       const updateContactWhatsApp = () => {
-        const sareeId = sareeIdInput.value.trim() || "Not provided";
+        const sareeId = sareeIdInput.value.trim();
         whatsappChatLink.href = buildWhatsAppLink(sareeId);
       };
 
-      sareeIdInput.addEventListener("input", updateContactWhatsApp);
-      updateContactWhatsApp();
+      if (sareeIdInput && whatsappChatLink) {
+        sareeIdInput.addEventListener("input", updateContactWhatsApp);
+        updateContactWhatsApp();
+      }
     </script>
   </body>
 </html>
