@@ -1,11 +1,13 @@
 :root {
-  --bg: #fffaf7;
-  --text: #2a1f1f;
-  --muted: #6e5a5a;
-  --accent: #8f2d2d;
-  --accent-soft: #f4e7de;
+  --bg: #f8faf9;
+  --text: #1d2e2e;
+  --muted: #5d7171;
+  --accent: #12807a;
+  --accent-dark: #0f5f5d;
+  --gold: #bf9b30;
+  --gold-soft: #e9d7a2;
   --surface: #ffffff;
-  --border: #ead8ce;
+  --border: #d9e7e4;
 }
 
 * {
@@ -16,7 +18,7 @@ body {
   margin: 0;
   font-family: "Inter", sans-serif;
   color: var(--text);
-  background: var(--bg);
+  background: radial-gradient(circle at top right, #edf8f6 0%, var(--bg) 45%);
   line-height: 1.6;
 }
 
@@ -30,7 +32,7 @@ h4 {
 }
 
 .container {
-  width: min(1120px, 92vw);
+  width: min(1140px, 92vw);
   margin: 0 auto;
 }
 
@@ -38,24 +40,51 @@ h4 {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(255, 250, 247, 0.95);
+  background: rgba(248, 250, 249, 0.96);
   border-bottom: 1px solid var(--border);
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(8px);
 }
 
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 0;
+  gap: 1.5rem;
+  padding: 0.8rem 0;
 }
 
 .brand {
   color: var(--text);
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.4rem;
-  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
   text-decoration: none;
+}
+
+.brand img {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gold-soft);
+}
+
+.brand span {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.brand strong {
+  font-size: 1.1rem;
+  font-family: "Cormorant Garamond", serif;
+}
+
+.brand small {
+  color: var(--muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 nav {
@@ -66,45 +95,71 @@ nav {
 nav a {
   color: var(--text);
   text-decoration: none;
-  font-weight: 500;
-}
-
-.hero {
-  padding: 6rem 0 5rem;
-  background: linear-gradient(145deg, #fef5ef, #f6e2d9 55%, #ebd2c5 100%);
-}
-
-.hero-content {
-  max-width: 680px;
-}
-
-.eyebrow {
-  font-size: 0.86rem;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: var(--accent);
   font-weight: 600;
 }
 
+.hero {
+  padding: 5.2rem 0 4rem;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.hero-copy-block {
+  background: linear-gradient(145deg, #ecf7f5 0%, #e3f2ef 45%, #f8f4e6 100%);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: clamp(1.3rem, 3.5vw, 2.2rem);
+}
+
+.eyebrow {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent-dark);
+  font-weight: 700;
+}
+
 h1 {
-  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-size: clamp(2.1rem, 5vw, 3.7rem);
   margin: 0.7rem 0 1rem;
 }
 
 .hero-copy {
   color: var(--muted);
-  font-size: 1.05rem;
-  margin-bottom: 1.8rem;
+  font-size: 1.02rem;
+  margin-bottom: 1.5rem;
 }
 
 .btn {
   display: inline-block;
-  padding: 0.8rem 1.4rem;
+  padding: 0.78rem 1.3rem;
   border-radius: 999px;
   text-decoration: none;
   color: #fff;
-  background: var(--accent);
+  background: linear-gradient(130deg, var(--accent-dark), var(--accent));
   font-weight: 600;
+}
+
+.trend-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 25px rgba(19, 68, 67, 0.07);
+}
+
+.trend-panel h2 {
+  color: var(--accent-dark);
+}
+
+.trend-panel ul {
+  margin: 0;
+  padding-left: 1.2rem;
 }
 
 .section {
@@ -128,26 +183,14 @@ h1 {
 .card {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 1rem;
+  border-radius: 18px;
+  padding: 1.2rem;
+  min-height: 190px;
+  box-shadow: 0 8px 20px rgba(13, 45, 45, 0.06);
 }
 
-.image {
-  height: 220px;
-  border-radius: 12px;
-  margin-bottom: 0.9rem;
-}
-
-.image-one {
-  background: linear-gradient(130deg, #d69f87, #b56f5f, #8f2d2d);
-}
-
-.image-two {
-  background: linear-gradient(130deg, #f6d5d0, #e9b8b4, #c0706f);
-}
-
-.image-three {
-  background: linear-gradient(130deg, #d5bfa7, #ba8e71, #8d5d42);
+.card h3 {
+  margin-bottom: 0.6rem;
 }
 
 .card p,
@@ -155,8 +198,55 @@ h1 {
   color: var(--muted);
 }
 
+.card-royal {
+  background: linear-gradient(180deg, #ffffff 0%, #f2f9f8 100%);
+  border-top: 4px solid #168b84;
+}
+
+.card-pastel {
+  background: linear-gradient(180deg, #ffffff 0%, #fff8f1 100%);
+  border-top: 4px solid #d8a176;
+}
+
+.card-heritage {
+  background: linear-gradient(180deg, #ffffff 0%, #eef4f7 100%);
+  border-top: 4px solid #4c7f98;
+}
+
+.card-office {
+  background: linear-gradient(180deg, #ffffff 0%, #f3faf7 100%);
+  border-top: 4px solid #49a27d;
+}
+
+.card-festival {
+  background: linear-gradient(180deg, #ffffff 0%, #fffaea 100%);
+  border-top: 4px solid var(--gold);
+}
+
+.card-fusion {
+  background: linear-gradient(180deg, #ffffff 0%, #f4f0fb 100%);
+  border-top: 4px solid #8366b4;
+}
+
+.signature {
+  background: linear-gradient(180deg, #f4faf9 0%, #edf4f2 100%);
+}
+
+.signature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.signature-grid article {
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  padding: 1rem;
+}
+
 .about {
-  background: var(--accent-soft);
+  background: #f5fbfa;
 }
 
 .about-grid {
@@ -172,8 +262,8 @@ h1 {
 }
 
 .footer {
-  background: #2d1f1f;
-  color: #f7ece8;
+  background: #133f3d;
+  color: #ecf7f5;
   padding: 2.4rem 0;
 }
 
@@ -186,12 +276,18 @@ h1 {
 
 .footer p {
   margin: 0.2rem 0;
-  color: #e7d6cf;
+  color: #d5e8e4;
 }
 
-@media (max-width: 900px) {
-  .cards {
+@media (max-width: 960px) {
+  .hero-grid,
+  .cards,
+  .signature-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-copy-block {
+    grid-column: span 2;
   }
 
   .about-grid {
@@ -199,16 +295,31 @@ h1 {
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 680px) {
   nav {
     display: none;
   }
 
   .hero {
-    padding-top: 4.5rem;
+    padding-top: 4rem;
   }
 
-  .cards {
+  .hero-grid,
+  .cards,
+  .signature-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hero-copy-block {
+    grid-column: auto;
+  }
+
+  .brand img {
+    width: 46px;
+    height: 46px;
+  }
+
+  .brand strong {
+    font-size: 0.98rem;
   }
 }
