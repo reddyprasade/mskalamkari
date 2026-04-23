@@ -6,6 +6,7 @@
   --accent: #6a42f4;
   --accent-dark: #4b2bcf;
   --accent-alt: #ff4f9a;
+  --link-accent: #2f4ec9;
   --card-bg: #ffffff;
   --border: #d9def7;
   --shadow: 0 14px 34px rgba(63, 46, 124, 0.12);
@@ -315,7 +316,7 @@ h1 {
 }
 
 .view-slides-btn {
-  color: #2f4ec9;
+  color: var(--link-accent);
 }
 
 .card-royal {
