@@ -88,7 +88,7 @@
         <figure class="slide">
           <img id="slideImage" src="Images/new-launched/slide.jpg" alt="New launched saree image" />
         </figure>
-        <p id="caption" class="caption">1 / 8</p>
+        <p id="caption" class="caption">Loading...</p>
         <div class="controls">
           <button id="prevBtn" type="button">Previous</button>
           <button id="nextBtn" type="button">Next</button>
@@ -113,7 +113,7 @@
       const prevBtn = document.getElementById("prevBtn");
       const nextBtn = document.getElementById("nextBtn");
       let index = 0;
-      let autoSlideId;
+      let autoSlideId = null;
 
       const render = () => {
         slideImage.src = images[index];
@@ -147,6 +147,7 @@
         restartAutoSlide();
       });
 
+      render();
       restartAutoSlide();
     </script>
   </body>
