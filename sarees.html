@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sarees Slides | MS Pen Kalamkari</title>
+    <link rel="stylesheet" href="gallery.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <div class="top">
+        <h1>Sarees Slides</h1>
+        <a href="index.html">Back to Home</a>
+      </div>
+      <section class="slider">
+        <figure class="slide">
+          <img id="slideImage" src="Images/sarees/slide.jpg" alt="Sarees collection image" />
+        </figure>
+        <p id="caption" class="caption">Loading...</p>
+        <div class="controls">
+          <button id="prevBtn" type="button">Previous</button>
+          <button id="nextBtn" type="button">Next</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="gallery.js"></script>
+    <script>
+      const images = [
+        "Images/sarees/slide.jpg",
+        "Images/sarees/1000005742.jpg",
+        "Images/sarees/1000027180.jpg",
+        "Images/sarees/1000027178.jpg",
+        "Images/sarees/1000027254.jpg",
+        "Images/sarees/1000027204.jpg",
+        "Images/sarees/1000005969.jpg",
+        "Images/sarees/1000027192.jpg",
+        "Images/sarees/1000027194.jpg",
+        "Images/sarees/1000027248.jpg",
+        "Images/sarees/1000006867.jpg",
+        "Images/sarees/1000027198.jpg",
+        "Images/sarees/1000027200.jpg",
+        "Images/sarees/1000005895.jpg",
+        "Images/sarees/1000005036.jpg",
+        "Images/sarees/1000027202.jpg",
+        "Images/sarees/1000027166.jpg",
+        "Images/sarees/1000027292.jpg",
+        "Images/sarees/1000027170.jpg",
+        "Images/sarees/1000006320.jpg",
+        "Images/sarees/1000027168.jpg",
+        "Images/sarees/1000027206.jpg",
+        "Images/sarees/1000027172.jpg",
+        "Images/sarees/1000028399.jpg",
+        "Images/sarees/1000028400.jpg",
+        "Images/sarees/1000027220.jpg",
+        "Images/sarees/1000028398.jpg",
+        "Images/sarees/1000027210.jpg",
+        "Images/sarees/1000027208.jpg",
+        "Images/sarees/1000027157.jpg",
+        "Images/sarees/1000027182.jpg",
+        "Images/sarees/1000027176.jpg",
+        "Images/sarees/1000028401.jpg",
+        "Images/sarees/1000027190.jpg",
+        "Images/sarees/1000027196.jpg",
+        "Images/sarees/1000027174.jpg",
+        "Images/sarees/1000027289.jpg",
+      ];
+      initGallery(images, { altText: "Sarees collection image" });
+    </script>
+  </body>
+</html>

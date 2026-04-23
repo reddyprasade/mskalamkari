@@ -6,6 +6,7 @@
   --accent: #6a42f4;
   --accent-dark: #4b2bcf;
   --accent-alt: #ff4f9a;
+  --link-accent: #2f4ec9;
   --card-bg: #ffffff;
   --border: #d9def7;
   --shadow: 0 14px 34px rgba(63, 46, 124, 0.12);
@@ -259,6 +260,13 @@ h1 {
   box-shadow: 0 2px 8px rgba(63, 46, 124, 0.1);
 }
 
+.category-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -305,6 +313,10 @@ h1 {
   text-decoration: none;
   font-weight: 700;
   color: var(--accent-dark);
+}
+
+.view-slides-btn {
+  color: var(--link-accent);
 }
 
 .card-royal {

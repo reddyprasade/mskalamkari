@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Launched Slides | MS Pen Kalamkari</title>
+    <link rel="stylesheet" href="gallery.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <div class="top">
+        <h1>New Launched Slides</h1>
+        <a href="index.html">Back to Home</a>
+      </div>
+      <section class="slider">
+        <figure class="slide">
+          <img id="slideImage" src="Images/new-launched/slide.jpg" alt="New launched saree image" />
+        </figure>
+        <p id="caption" class="caption">Loading...</p>
+        <div class="controls">
+          <button id="prevBtn" type="button">Previous</button>
+          <button id="nextBtn" type="button">Next</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="gallery.js"></script>
+    <script>
+      const images = [
+        "Images/new-launched/slide.jpg",
+        "Images/new-launched/1000026873.jpg",
+        "Images/new-launched/1000027264.jpg",
+        "Images/new-launched/1000028399.jpg",
+        "Images/new-launched/1000028400.jpg",
+        "Images/new-launched/1000028398.jpg",
+        "Images/new-launched/1000026903.jpg",
+        "Images/new-launched/1000026890.jpg",
+      ];
+      initGallery(images, { altText: "New launched saree image" });
+    </script>
+  </body>
+</html>
