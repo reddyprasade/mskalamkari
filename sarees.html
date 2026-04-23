@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sarees Slides | MS Pen Kalamkari</title>
+    <style>
+      :root {
+        --bg: #f4f7ff;
+        --card: #ffffff;
+        --text: #1d2342;
+        --accent: #6242e9;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: Inter, Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+      }
+      .wrap {
+        width: min(980px, 92vw);
+        margin: 2rem auto;
+      }
+      .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      .top a {
+        text-decoration: none;
+        color: #fff;
+        background: var(--accent);
+        padding: 0.6rem 1rem;
+        border-radius: 999px;
+        font-weight: 600;
+      }
+      .slider {
+        margin-top: 1rem;
+        background: var(--card);
+        border-radius: 16px;
+        border: 1px solid #dce3ff;
+        padding: 0.8rem;
+      }
+      .slide {
+        margin: 0;
+      }
+      .slide img {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+        border-radius: 12px;
+        display: block;
+      }
+      .controls {
+        display: flex;
+        justify-content: center;
+        gap: 0.8rem;
+        margin-top: 0.8rem;
+      }
+      button {
+        border: 0;
+        border-radius: 999px;
+        padding: 0.55rem 0.95rem;
+        background: #eef1ff;
+        cursor: pointer;
+        font-weight: 600;
+      }
+      .caption {
+        text-align: center;
+        margin: 0.7rem 0 0.2rem;
+        color: #4d5688;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <div class="top">
+        <h1>Sarees Slides</h1>
+        <a href="index.html">Back to Home</a>
+      </div>
+      <section class="slider">
+        <figure class="slide">
+          <img id="slideImage" src="Images/sarees/slide.jpg" alt="Sarees collection image" />
+        </figure>
+        <p id="caption" class="caption">1 / 37</p>
+        <div class="controls">
+          <button id="prevBtn" type="button">Previous</button>
+          <button id="nextBtn" type="button">Next</button>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const images = [
+        "Images/sarees/slide.jpg",
+        "Images/sarees/1000005742.jpg",
+        "Images/sarees/1000027180.jpg",
+        "Images/sarees/1000027178.jpg",
+        "Images/sarees/1000027254.jpg",
+        "Images/sarees/1000027204.jpg",
+        "Images/sarees/1000005969.jpg",
+        "Images/sarees/1000027192.jpg",
+        "Images/sarees/1000027194.jpg",
+        "Images/sarees/1000027248.jpg",
+        "Images/sarees/1000006867.jpg",
+        "Images/sarees/1000027198.jpg",
+        "Images/sarees/1000027200.jpg",
+        "Images/sarees/1000005895.jpg",
+        "Images/sarees/1000005036.jpg",
+        "Images/sarees/1000027202.jpg",
+        "Images/sarees/1000027166.jpg",
+        "Images/sarees/1000027292.jpg",
+        "Images/sarees/1000027170.jpg",
+        "Images/sarees/1000006320.jpg",
+        "Images/sarees/1000027168.jpg",
+        "Images/sarees/1000027206.jpg",
+        "Images/sarees/1000027172.jpg",
+        "Images/sarees/1000028399.jpg",
+        "Images/sarees/1000028400.jpg",
+        "Images/sarees/1000027220.jpg",
+        "Images/sarees/1000028398.jpg",
+        "Images/sarees/1000027210.jpg",
+        "Images/sarees/1000027208.jpg",
+        "Images/sarees/1000027157.jpg",
+        "Images/sarees/1000027182.jpg",
+        "Images/sarees/1000027176.jpg",
+        "Images/sarees/1000028401.jpg",
+        "Images/sarees/1000027190.jpg",
+        "Images/sarees/1000027196.jpg",
+        "Images/sarees/1000027174.jpg",
+        "Images/sarees/1000027289.jpg",
+      ];
+
+      const slideImage = document.getElementById("slideImage");
+      const caption = document.getElementById("caption");
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+      let index = 0;
+
+      const render = () => {
+        slideImage.src = images[index];
+        caption.textContent = `${index + 1} / ${images.length}`;
+      };
+
+      const next = () => {
+        index = (index + 1) % images.length;
+        render();
+      };
+
+      const prev = () => {
+        index = (index - 1 + images.length) % images.length;
+        render();
+      };
+
+      nextBtn.addEventListener("click", next);
+      prevBtn.addEventListener("click", prev);
+      setInterval(next, 3500);
+    </script>
+  </body>
+</html>
